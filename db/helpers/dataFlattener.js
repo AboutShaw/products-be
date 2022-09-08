@@ -1,4 +1,6 @@
-const products = require('../data/products.json');
+let products = require('../data/products.json');
+
+products = JSON.parse(products);
 
 function flattenObject(products) {
     let flatProducts = {};
