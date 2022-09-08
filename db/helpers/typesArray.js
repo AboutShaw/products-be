@@ -11,3 +11,5 @@ function typesFromProducts(products) {
 
     return productTypes;
 }
+
+export default typesFromProducts;

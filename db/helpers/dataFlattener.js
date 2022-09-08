@@ -19,3 +19,5 @@ function flattenObject(products) {
     }
     return flatProducts;
 }
+
+export default flattenObject;
