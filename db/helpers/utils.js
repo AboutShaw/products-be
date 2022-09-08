@@ -1,33 +1,23 @@
-let products = JSON.parse(products);
-
-export function flattenObject(products) {
-    let flatProducts = {};
-
-    for (let i in products) {
-        if (!products.hasOwnProperty(i)) continue;
-
-        if ((typeof products[i]) == 'object' && products[i] !== null) {
-            let flatProducts = flattenObject(products[i]);
-            for (let x in flatProducts) {
-                if (!flatProducts.hasOwnProperty(x)) continue;
-
-                toReturn[i + '.' + x] = flatProducts[x];
-            }
-        } else {
-            flatProducts[i] = ob[i];
-        }
+exports.flattenArrayObj = (obj, parent, res = {}) => {
+    for (const key of Object.keys(obj)) {
+      const propName = parent ? parent + '.' + key : key;
+      if (typeof obj[key] === 'object') {
+        this.flattenArrayObj(obj[key], propName, res);
+      } else {
+        res[propName] = obj[key];
+      }
     }
-    return flatProducts;
-};
+    return res;
+  };
 
-export function typesFromProducts(products) {
+exports.typesFromProducts = (products) => {
     let productTypes = [];
 
-    for(let i in products) {
-        productTypes.push(i.type)
-    }
+    products.forEach(element => {
+        productTypes.push(element.type)
+    });
 
-    productTypes = Set(productTypes);
+    productTypes = [...new Set(productTypes)];
 
     return productTypes;
 };
