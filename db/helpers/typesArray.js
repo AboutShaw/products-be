@@ -2,7 +2,7 @@ let products = require('../data/products.json');
 
 products = JSON.parse(products);
 
-function typesFromProducts(products) {
+export function typesFromProducts(products) {
     let productTypes = [];
 
     for(let i in products) {
@@ -12,6 +12,4 @@ function typesFromProducts(products) {
     productTypes = Set(productTypes);
 
     return productTypes;
-}
-
-export default typesFromProducts;
+};

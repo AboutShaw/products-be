@@ -1,3 +1,3 @@
-import flattenObject from "./db/helpers/dataFlattener";
+let flattenObject = require('./db/helpers')
 
 console.log(flattenObject);

@@ -2,7 +2,7 @@ let products = require('../data/products.json');
 
 products = JSON.parse(products);
 
-function flattenObject(products) {
+export function flattenObject(products) {
     let flatProducts = {};
 
     for (let i in products) {
@@ -20,6 +20,4 @@ function flattenObject(products) {
         }
     }
     return flatProducts;
-}
-
-export default flattenObject;
+};
