@@ -1,5 +1,37 @@
 {
+  "name": "products-be",
+  "version": "1.0.0",
+  "description": "back end for tech assess",
+  "main": "index.js",
   "dependencies": {
-    "pg": "^8.8.0"
-  }
+    "buffer-writer": "^2.0.0",
+    "packet-reader": "^1.0.0",
+    "pg-connection-string": "^2.5.0",
+    "pg": "^8.8.0",
+    "pg-int8": "^1.0.1",
+    "pg-pool": "^3.5.2",
+    "pg-types": "^2.2.0",
+    "pgpass": "^1.0.5",
+    "postgres-array": "^2.0.0",
+    "pg-protocol": "^1.5.0",
+    "postgres-bytea": "^1.0.0",
+    "postgres-date": "^1.0.7",
+    "postgres-interval": "^1.2.0",
+    "split2": "^4.1.0",
+    "xtend": "^4.0.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://AboutShaw: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@github.com/AboutShaw/products-be.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AboutShaw/products-be/issues"
+  },
+  "homepage": "https://github.com/AboutShaw/products-be#readme"
 }
