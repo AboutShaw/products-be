@@ -3,19 +3,18 @@ const db = require("..");
 const createTables = async () => {
   const productsTablePromise = db.query(`
   CREATE TABLE products (
-    productNumber SERIAL PRIMARY KEY,
-    id VARCHAR NOT NULL,
+    id SERIAL PRIMARY KEY,
     name VARCHAR NOT NULL,
     description VARCHAR NOT NULL,
     type VARCHAR NOT NULL,
     department VARCHAR NOT NULL,
     weight VARCHAR NOT NULL,
-    priceValue FLOAT NOT NULL,
+    priceValue INT NOT NULL,
     priceCurrency VARCHAR NOT NULL
   );`);
 
-  await Promise.all([productsTablePromise]);
-  
+  await Promise(productsTablePromise);
+
 };
 
 const dropTables = async () => {
