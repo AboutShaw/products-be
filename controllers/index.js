@@ -5,7 +5,9 @@ const {
 const apis = require(`../endpoints.json`);
 
 exports.getProducts = (req, res, next) => {
-  selectProducts().then((products) => {
+  const { sort, limit } = req.params;
+
+  selectProducts({ sort, limit }).then((products) => {
     res.status(200).send({ products })})
     .catch(next);
 }
