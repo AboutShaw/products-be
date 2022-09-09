@@ -19,7 +19,7 @@ const seed = async (products) => {
     .then((result) => result.rows);
 
 
-  await Promise.all(productsPromise);
+  await Promise.all([productsPromise]);
 
 };
 

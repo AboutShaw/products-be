@@ -3,17 +3,18 @@ const db = require("..");
 const createTables = async () => {
   const productsTablePromise = db.query(`
   CREATE TABLE products (
-    id SERIAL PRIMARY KEY,
+    productNumber SERIAL PRIMARY KEY,
+    id VARCHAR NOT NULL,
     name VARCHAR NOT NULL,
     description VARCHAR NOT NULL,
     type VARCHAR NOT NULL,
     department VARCHAR NOT NULL,
     weight VARCHAR NOT NULL,
-    priceValue INT NOT NULL,
-    priceCurrency VARCHAR NOT
+    priceValue VARCHAR NOT NULL,
+    priceCurrency VARCHAR NOT NULL
   );`);
 
-  await Promise(productsTablePromise);
+  await Promise.all([productsTablePromise]);
   
 };
 
