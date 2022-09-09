@@ -1,5 +1,25 @@
 {
     "GET /api": {
       "description": "serves up a json representation of all the available endpoints of the api"
-    }
+    },
+    "GET /api/products": {
+      "description": "serves an array of all products",
+      "queries": [],
+      "exampleResponse": {
+        "topics": [
+          {
+          "productNumber": 1,
+          "id": "SGN-2",
+          "name": "Samsung Galaxy Note 2",
+          "description": "Samsung tablet computer",
+          "price": {
+            "value": 299.99,
+            "currency": "GBP"
+          },
+          "type": "Electrical",
+          "department": "Computing",
+          "weight": "569g"
+          }
+        ]
+      }
 }
