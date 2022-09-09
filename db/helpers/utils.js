@@ -4,7 +4,7 @@ let arrayWithFlatObjs = array;
 
 arrayWithFlatObjs.forEach(element => {
     element.priceValue = parseFloat(element.price.value);
-    element.priceCurrency = parseFloat(element.price.currency);
+    element.priceCurrency = element.price.currency;
     delete element.price;
   })
   
