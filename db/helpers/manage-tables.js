@@ -10,7 +10,7 @@ const createTables = async () => {
     type VARCHAR NOT NULL,
     department VARCHAR NOT NULL,
     weight VARCHAR NOT NULL,
-    priceValue VARCHAR NOT NULL,
+    priceValue FLOAT NOT NULL,
     priceCurrency VARCHAR NOT NULL
   );`);
 

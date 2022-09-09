@@ -5,7 +5,8 @@ exports.selectProducts = () => {
     return db
       .query(
         `    SELECT  *
-                  FROM    products;`
+                  FROM    products
+                  ORDER BY priceValue ASC;`
       )
       .then((result) => {
         return result.rows;

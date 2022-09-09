@@ -1,12 +1,12 @@
 {
-    "GET /api": {
-      "description": "serves up a json representation of all the available endpoints of the api"
-    },
-    "GET /api/products": {
-      "description": "serves an array of all products",
-      "queries": [],
-      "exampleResponse": {
-        "topics": [
+  "GET /api": {
+    "description": "serves up a json representation of all the available endpoints of the api"
+  },
+  "GET /api/products": {
+    "description": "serves an array of all products",
+    "queries": [],
+    "exampleResponse": {
+        "products": [
           {
           "productNumber": 1,
           "id": "SGN-2",
@@ -22,4 +22,5 @@
           }
         ]
       }
+    }
 }

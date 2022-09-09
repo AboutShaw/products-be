@@ -3,8 +3,8 @@ exports.flattenArrayObjs = (array) => {
 let arrayWithFlatObjs = array;
 
 arrayWithFlatObjs.forEach(element => {
-    element.priceValue = element.price.value;
-    element.priceCurrency = element.price.currency;
+    element.priceValue = parseFloat(element.price.value);
+    element.priceCurrency = parseFloat(element.price.currency);
     delete element.price;
   })
   
