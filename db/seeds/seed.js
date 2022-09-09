@@ -1,7 +1,7 @@
 const format = require("pg-format");
 const {
     flattenArrayObjs,
-  } = require("../db/helpers/utils");
+  } = require("../helpers/utils");
 const db = require("..");
 const { dropTables, createTables } = require("../helpers/manage-tables");
 
