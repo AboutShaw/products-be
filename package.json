@@ -8,6 +8,7 @@
     "cors": "^2.8.5",
     "dotenv": "^16.0.2",
     "express": "^4.18.1",
+    "joi": "^17.6.0",
     "packet-reader": "^1.0.0",
     "pg": "^8.8.0",
     "pg-connection-string": "^2.5.0",
