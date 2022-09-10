@@ -6,7 +6,7 @@ const {
 const apis = require(`../endpoints.json`);
 
 const schema = Joi.object({
-  sort: Joi.string()
+  order: Joi.string()
     .alphanum()
     .valid('asc', 'desc'),
   password: Joi.number()
@@ -16,11 +16,11 @@ const schema = Joi.object({
 })
 
 exports.getProducts = (req, res, next) => {
-  let { sort, limit } = req.params
+  let { order, type, limit } = req.params;
 
-  schema.validate({ sort, limit })
+  schema.validate({ order, type, limit })
 
-  selectProducts({ sort, limit }).then((products) => {
+  selectProducts({ order, type, limit }).then((products) => {
     res.status(200).send({ products })})
     .catch(next);
 }
