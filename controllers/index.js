@@ -6,21 +6,24 @@ const {
 const apis = require(`../endpoints.json`);
 
 const schema = Joi.object({
-  order: Joi.string()
+  sort: Joi.string()
     .alphanum()
     .valid('asc', 'desc'),
-  password: Joi.number()
+  limit: Joi.number()
     .integer()
     .min(1)
     .max(100),
 })
 
 exports.getProducts = (req, res, next) => {
-  let { order, type, limit } = req.params;
+  let { sort, limit } = req.query
 
-  schema.validate({ order, type, limit })
+  const { error } = schema.validate({ sort, limit })
+  if (error) {
+    return res.status(400).send()
+  }
 
-  selectProducts({ order, type, limit }).then((products) => {
+  selectProducts({ sort, limit }).then((products) => {
     res.status(200).send({ products })})
     .catch(next);
 }
